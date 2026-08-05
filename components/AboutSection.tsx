@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
-import { Navigation, Pin, MapPin, Monitor, CheckCircle2 } from "lucide-react";
+import { Navigation, Pin, MapPin, Check, User, Activity } from "lucide-react";
 
 export default function AboutSection() {
   const fadeUp: Variants = {
@@ -16,72 +16,57 @@ export default function AboutSection() {
   };
 
   return (
-    // Menghapus bg-gray-50 agar menyatu dengan halaman parent (page.tsx)
-    <section id="about" className="py-24 relative font-sans overflow-hidden">
+    /* PERBAIKAN UTAMA:
+      - `scroll-mt-24`: Memberikan jarak aman saat di-scroll dari Navbar agar tidak mentok ke Hero Section.
+      - `min-h-screen`: Memaksa section ini mengambil tinggi minimal satu layar penuh.
+      - `flex items-center`: Memastikan semua konten berada di tengah-tengah layar secara vertikal saat di-scroll.
+    */
+    <section className="relative z-10 min-h-screen flex items-center py-20 lg:py-28 font-sans overflow-hidden bg-white scroll-mt-24">
       
-      {/* --- LATAR BELAKANG PENYAMBUNG (BRIDGING) --- */}
-      {/* Pola Titik (Dot Grid) dasar */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(#cbd5e1_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-60" />
-      
-      {/* Bentuk penyambung dari Hero Section (Nempel di atas) */}
-      <div className="absolute -top-32 -right-32 w-[40rem] h-[40rem] bg-cyan-100/50 rounded-full z-0" />
-      <div className="absolute top-[10%] -left-20 w-[30rem] h-[30rem] bg-yellow-100/40 rounded-full z-0" />
-      
-      {/* Aksen geometris kecil */}
-      <div className="absolute top-[20%] left-[45%] w-12 h-12 border-[4px] border-red-300 rounded-full z-0 opacity-40" />
-      <div className="absolute bottom-[10%] left-[10%] w-20 h-20 bg-yellow-200/50 rounded-2xl rotate-[-15deg] z-0" />
+      {/* --- LATAR BELAKANG --- */}
+      <div  className="absolute inset-0 z-0 bg-[radial-gradient(#cbd5e1_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-60" />
 
-
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-16 items-center min-h-[70vh]">
+      <div id="about" className="container mx-auto px-6 py-16 relative z-10W">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
           
-          {/* --- KOLOM KIRI: TEKS (7 Kolom) --- */}
+          {/* --- KOLOM KIRI: TEKS (6 Kolom) --- */}
           <motion.div 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={fadeUp}
-            className="lg:col-span-7 space-y-8"
+            className="lg:col-span-6 space-y-8"
           >
-            <Badge className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-5 py-2.5 rounded-full text-xs font-black tracking-widest border-none shadow-sm flex items-center gap-2 w-max">
-              <Navigation className="w-4 h-4 fill-gray-900 rotate-90" />
+            <Badge className="bg-[#FDE047] hover:bg-yellow-500 text-gray-900 px-5 py-4 rounded-full text-xs font-black tracking-widest border-none shadow-sm flex items-center gap-2 w-max">
               PORTOFOLIO DEVELOPER
             </Badge>
 
             <h2 className="text-5xl lg:text-7xl font-black tracking-tighter text-gray-900">
-              About <span className="text-red-500">Me.</span>
+              About <span className="text-[#F87171]">Me</span>
             </h2>
 
-            <div className="space-y-5 text-gray-600 text-lg leading-relaxed font-medium bg-white/50 backdrop-blur-sm p-3 -ml-3 rounded-xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
+            <div className="space-y-4 text-gray-600 text-[15px] leading-relaxed font-medium text-justify pr-0 lg:pr-4">
               <p>
-                Saya Muhammad Ainur Rofik, seorang Web Developer yang berfokus pada efisiensi sistem, otomasi, dan arsitektur backend. Saya memiliki ketertarikan kuat dalam membangun aplikasi modern dari awal hingga siap digunakan. Keahlian saya mencakup perancangan logika backend menggunakan <strong>Laravel</strong> dan <strong>Python Flask</strong>, pengelolaan basis data, hingga konfigurasi perangkat lunak web server seperti <strong>Nginx</strong> di lingkungan operasi Linux.
+                Saya Muhammad Ainur Rofik, seorang Web Developer yang berfokus pada efisiensi sistem, manajemen server, dan pemecahan masalah. Saya memiliki ketertarikan yang kuat dalam membangun aplikasi dari hulu ke hilir. Keahlian saya mencakup perancangan arsitektur backend menggunakan Laravel, pengelolaan basis data, hingga konfigurasi web server seperti Nginx di lingkungan OS Linux. 
               </p>
               <p>
-                Dalam proses pengembangan, saya sangat nyaman mengadopsi alur kerja <em>AI-Assisted Development</em> untuk mempercepat penulisan kode, <em>debugging</em>, dan mencari solusi logis. Saya berfokus pada sisi perangkat lunak dan <em>deployment</em> aplikasi, sementara untuk urusan perangkat keras fisik (*hardware* lab/server) saya serahkan kepada pihak infrastruktur yang berwenang.
-              </p>
-              <p>
-                Saat ini, saya sedang menaruh fokus penuh untuk merampungkan platform <strong>Whypanel</strong> guna menyambut tahap Seminar Hasil.
+                Saya mengadopsi alur kerja AI-Assisted Development untuk mempercepat penulisan kode, debugging, dan memastikan aplikasi aman serta siap di-deploy. Di luar keahlian teknis, saya mampu bekerja secara mandiri maupun di dalam tim, serta memiliki kemampuan komunikasi yang solid untuk berkolaborasi dan berkoordinasi dengan berbagai pihak guna memastikan kelancaran pengembangan aplikasi.
               </p>
             </div>
           </motion.div>
 
-          {/* --- KOLOM KANAN: GAMBAR & KARTU (5 Kolom) --- */}
+          {/* --- KOLOM KANAN: GAMBAR & KARTU MELAYANG (6 Kolom) --- */}
           <motion.div 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={fadeLeft}
-            className="lg:col-span-5 relative flex justify-center items-center mt-12 lg:mt-0"
+            className="lg:col-span-6 relative flex justify-center lg:justify-start items-center mt-12 lg:mt-0 lg:pl-6"
           >
-            {/* Wadah Utama Foto */}
-            <div className="relative w-full max-w-[340px] aspect-[3/4] z-10">
+            <div className="relative flex flex-col lg:block w-[280px] lg:w-[320px] h-auto lg:h-[420px] z-10 mx-auto lg:mx-0 lg:ml-2 gap-5 lg:gap-0">
               
-              {/* Bingkai Foto */}
-              <div className="absolute inset-0 bg-gray-200 rounded-3xl overflow-hidden shadow-2xl border-8 border-white z-10 relative">
-                {/* 
-                  Menggunakan tag <img> HTML biasa dengan sistem Fallback.
-                  Jika foto-profil.jpg tidak ditemukan, otomatis menampilkan avatar huruf AR.
-                */}
+              {/* Bingkai Foto Utama */}
+              <div className="relative lg:absolute lg:inset-0 h-[380px] lg:h-auto w-full lg:w-full bg-gray-200 rounded-[2rem] overflow-hidden shadow-xl border-[6px] border-white z-10">
                 <img 
                   src="/images/foto-profil.jpg" 
                   alt="Muhammad Ainur Rofik"
@@ -92,50 +77,79 @@ export default function AboutSection() {
                 />
               </div>
 
-              {/* Card 1: Kutipan (Nempel di pojok kanan atas bingkai) */}
-              <div className="absolute -top-6 -right-12 lg:-right-20 w-56 bg-white p-4 rounded-2xl shadow-xl z-20 border border-gray-100 hidden sm:block">
-                <Pin className="absolute -top-3 -right-2 w-6 h-6 text-red-500 fill-red-500 rotate-12" />
-                <p className="text-xs font-bold text-gray-800 leading-snug">
-                  "Infrastruktur perangkat lunak yang solid dan kode yang bersih adalah fondasi aplikasi yang skalabel."
+              {/* Card 1: Kutipan */}
+              <div className="relative lg:absolute lg:top-8 lg:-right-28 xl:-right-48 w-full lg:w-[240px] bg-white p-4 lg:p-5 rounded-2xl shadow-xl z-20 border border-gray-100">
+                <Pin className="absolute -top-4 -right-3 w-8 h-8 text-[#F87171] fill-[#F87171] rotate-12" />
+                <p className="text-[12px] lg:text-[13px] font-bold text-gray-800 leading-snug">
+                  Infrastruktur yang solid dan kode yang bersih adalah fondasi dari aplikasi web yang skalabel dan efisien.
                 </p>
               </div>
 
-              {/* Card 2: Profil Detail (Nempel di sisi kanan tengah) */}
-              <div className="absolute top-[40%] -right-8 lg:-right-16 w-52 bg-white/95 backdrop-blur-sm p-4 rounded-2xl shadow-xl z-20 border border-gray-100 hidden sm:block">
-                <h4 className="font-black text-gray-900 mb-3 text-xs border-b pb-2">Profil Singkat</h4>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-2.5">
-                    <MapPin className="w-4 h-4 text-cyan-600 mt-0.5" />
+              {/* Card 2: Profil Developer */}
+              <div className="relative lg:absolute lg:top-38 lg:-right-28 xl:-right-48 w-full lg:w-[240px] bg-white p-4 lg:p-5 rounded-2xl shadow-xl z-20 border border-gray-100">
+                <h4 className="font-black text-gray-900 mb-4 text-[14px] lg:text-[15px]">Profil Developer</h4>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center shrink-0">
+                      <User className="w-4 h-4 text-white" />
+                    </div>
                     <div>
-                      <p className="text-[9px] text-gray-500 font-bold uppercase">Lokasi</p>
-                      <p className="text-xs font-bold text-gray-900 leading-none mt-0.5">Sidoarjo</p>
+                      <p className="text-[10px] text-gray-500 font-bold uppercase leading-none mt-1">Nama</p>
+                      <p className="text-[11px] lg:text-xs font-bold text-gray-900 leading-tight mt-1">Muhammad Ainur Rofik</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-2.5">
-                    <Monitor className="w-4 h-4 text-cyan-600 mt-0.5" />
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center shrink-0">
+                      <MapPin className="w-4 h-4 text-white" />
+                    </div>
                     <div>
-                      <p className="text-[9px] text-gray-500 font-bold uppercase">Fokus</p>
-                      <p className="text-xs font-bold text-gray-900 leading-tight mt-0.5">Backend & Automasi</p>
+                      <p className="text-[10px] text-gray-500 font-bold uppercase leading-none mt-1">Lokasi</p>
+                      <p className="text-[11px] lg:text-xs font-bold text-gray-900 leading-tight mt-1">Sidoarjo, Jawa Timur</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center shrink-0">
+                      <Activity className="w-4 h-4 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-gray-500 font-bold uppercase leading-none mt-1">Fokus</p>
+                      <p className="text-[11px] lg:text-xs font-bold text-gray-900 leading-tight mt-1">Backend, frontend,<br/>Server, Automasi</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Card 3: Keahlian Utama (Blok Kuning di kiri bawah) */}
-              <div className="absolute -bottom-8 -left-8 lg:-left-12 w-64 bg-yellow-400 p-5 rounded-2xl shadow-xl z-30">
-                <h4 className="font-black text-yellow-950 text-sm mb-3">Keahlian Utama</h4>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-white fill-red-500 shrink-0" />
-                    <span className="text-xs font-bold text-yellow-950">Arsitektur MVC</span>
+              {/* Card 3: Keahlian Utama (Kuning) */}
+              <div className="relative lg:absolute lg:-bottom-20 lg:-left-8 w-full lg:w-[480px] bg-[#FDE047] py-3 px-5 lg:py-4 lg:px-6 rounded-2xl shadow-xl z-30 flex flex-col justify-center min-h-[100px]">
+                
+                {/* Jarak bawah judul (mb) dikurangi agar tidak memakan banyak ruang */}
+                <h4 className="font-black text-gray-900 text-sm lg:text-base mb-2 lg:mb-3 text-left">
+                  Keahlian Utama
+                </h4>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-4">
+                  {/* Poin 1 (items-center agar ikon lurus dengan teks) */}
+                  <div className="flex items-center gap-2 text-left">
+                    <div className="w-5 h-5 lg:w-6 lg:h-6 rounded-full bg-[#F87171] flex items-center justify-center shrink-0">
+                       <Check className="w-3 h-3 lg:w-4 lg:h-4 text-white" strokeWidth={3} />
+                    </div>
+                    <span className="text-[11px] font-bold text-gray-900 leading-tight">Pengembangan<br className="hidden sm:block"/>MVC</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-white fill-red-500 shrink-0" />
-                    <span className="text-xs font-bold text-yellow-950">Isolasi & Deployment</span>
+                  
+                  {/* Poin 2 */}
+                  <div className="flex items-center gap-2 text-left">
+                    <div className="w-5 h-5 lg:w-6 lg:h-6 rounded-full bg-[#F87171] flex items-center justify-center shrink-0">
+                       <Check className="w-3 h-3 lg:w-4 lg:h-4 text-white" strokeWidth={3} />
+                    </div>
+                    <span className="text-[11px] font-bold text-gray-900 leading-tight">Isolasi & Deployment<br className="hidden sm:block"/>Server</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-white fill-red-500 shrink-0" />
-                    <span className="text-xs font-bold text-yellow-950">Pemecahan Logika</span>
+                  
+                  {/* Poin 3 */}
+                  <div className="flex items-center gap-2 text-left">
+                    <div className="w-5 h-5 lg:w-6 lg:h-6 rounded-full bg-[#F87171] flex items-center justify-center shrink-0">
+                       <Check className="w-3 h-3 lg:w-4 lg:h-4 text-white" strokeWidth={3} />
+                    </div>
+                    <span className="text-[11px] font-bold text-gray-900 leading-tight">Pemecahan<br className="hidden sm:block"/>Masalah Logika</span>
                   </div>
                 </div>
               </div>

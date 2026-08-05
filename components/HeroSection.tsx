@@ -46,7 +46,7 @@ export default function HeroSection() {
         className="relative z-10 w-full container mx-auto px-6 py-8 flex justify-between items-center"
       >
         <div className="text-2xl font-black tracking-tighter text-gray-900">
-          Rofik<span className="text-red-500">.</span>
+          Fikstory<span className="text-red-500">.</span>
         </div>
         <div className="hidden md:flex gap-8 font-bold text-gray-600 text-sm uppercase tracking-wider">
           <a href="#about" className="hover:text-red-500 transition-colors">About Me</a>
@@ -69,8 +69,8 @@ export default function HeroSection() {
             className="lg:col-span-7 space-y-8"
           >
             <motion.div variants={fadeUp}>
-              <Badge className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-4 py-1.5 rounded-md text-sm font-bold border-none shadow-sm">
-                Web Developer & Server Enthusiast
+              <Badge className="bg-[#FDE047] hover:bg-yellow-500 text-gray-900 px-4 py-4 rounded-full text-xs font-black tracking-widest border-none shadow-sm flex items-center gap-2 w-max">
+                WEB DEVELOPER & SERVER ENTHUSIAST
               </Badge>
             </motion.div>
 
@@ -83,14 +83,6 @@ export default function HeroSection() {
               Halo, saya Muhammad Ainur Rofik. Saya merancang arsitektur backend yang tangguh, mengelola infrastruktur Linux, dan memanfaatkan AI untuk mempercepat alur kerja. Saat ini sedang fokus menyempurnakan platform Whypanel untuk menuju tahap Seminar Hasil.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="flex flex-wrap gap-4 pt-4">
-              <Button size="lg" className="bg-red-500 hover:bg-red-600 text-white rounded-full px-8 h-14 font-bold shadow-lg shadow-red-200">
-                Jelajahi Project <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full px-8 h-14 font-bold border-gray-300 text-gray-700 hover:bg-gray-100 bg-white/70 backdrop-blur-sm">
-                Hubungi Saya
-              </Button>
-            </motion.div>
           </motion.div>
 
           {/* Bagian Kanan */}
