@@ -52,6 +52,7 @@ export default function HeroSection() {
           <a href="#about" className="hover:text-red-500 transition-colors">About Me</a>
           <a href="#tools" className="hover:text-cyan-600 transition-colors">Tools</a>
           <a href="#project" className="hover:text-yellow-500 transition-colors">Project</a>
+          <a href="#services" className="hover:text-cyan-600 transition-colors">Services</a>
           <a href="#contact" className="hover:text-red-500 transition-colors">Contact Me</a>
         </div>
       </motion.nav>
@@ -96,7 +97,7 @@ export default function HeroSection() {
               <Code2 className="w-10 h-10 text-yellow-900 mb-4 relative z-10" />
               <div className="relative z-10">
                 <h3 className="font-black text-2xl text-yellow-900">Backend System</h3>
-                <p className="text-yellow-800 font-medium text-sm mt-1">Laravel & Python Flask</p>
+                <p className="text-yellow-800 font-medium text-sm mt-1">PHP & Python</p>
               </div>
             </div>
 

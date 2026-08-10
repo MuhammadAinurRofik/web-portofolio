@@ -24,9 +24,9 @@ export default function AboutSection() {
     <section className="relative z-10 min-h-screen flex items-center py-20 lg:py-28 font-sans overflow-hidden bg-white scroll-mt-24">
       
       {/* --- LATAR BELAKANG --- */}
-      <div  className="absolute inset-0 z-0 bg-[radial-gradient(#cbd5e1_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-60" />
+      <div id="about" className="absolute inset-0 z-0 bg-[radial-gradient(#cbd5e1_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-60" />
 
-      <div id="about" className="container mx-auto px-6 py-16 relative z-10W">
+      <div className="container mx-auto px-6 relative z-10W">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
           {/* --- KOLOM KIRI: TEKS (6 Kolom) --- */}
@@ -103,7 +103,7 @@ export default function AboutSection() {
                       <MapPin className="w-4 h-4 text-white" />
                     </div>
                     <div>
-                      <p className="text-[10px] text-gray-500 font-bold uppercase leading-none mt-1">Lokasi</p>
+                      <p className="text-[10px] text-gray-500 font-bold uppercase leading-none mt-1">Alamat</p>
                       <p className="text-[11px] lg:text-xs font-bold text-gray-900 leading-tight mt-1">Sidoarjo, Jawa Timur</p>
                     </div>
                   </div>
@@ -120,12 +120,7 @@ export default function AboutSection() {
               </div>
 
               {/* Card 3: Keahlian Utama (Kuning) */}
-              <div className="relative lg:absolute lg:-bottom-20 lg:-left-8 w-full lg:w-[480px] bg-[#FDE047] py-3 px-5 lg:py-4 lg:px-6 rounded-2xl shadow-xl z-30 flex flex-col justify-center min-h-[100px]">
-                
-                {/* Jarak bawah judul (mb) dikurangi agar tidak memakan banyak ruang */}
-                <h4 className="font-black text-gray-900 text-sm lg:text-base mb-2 lg:mb-3 text-left">
-                  Keahlian Utama
-                </h4>
+              <div className="relative lg:absolute lg:-bottom-16 lg:-left-8 w-full lg:w-[480px] bg-[#FDE047] py-3 px-5 lg:py-4 lg:px-6 rounded-2xl shadow-xl z-30 flex flex-col justify-center min-h-[100px]">
                 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 lg:gap-4">
                   {/* Poin 1 (items-center agar ikon lurus dengan teks) */}
