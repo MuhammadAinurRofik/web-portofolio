@@ -46,7 +46,7 @@ export default function HeroSection() {
         className="relative z-10 w-full container mx-auto px-6 py-8 flex justify-between items-center"
       >
         <div className="text-2xl font-black tracking-tighter text-gray-900">
-          Fikstorymmmmmm<span className="text-red-500">.</span>
+          Fikstorys<span className="text-red-500">.</span>
         </div>
         <div className="hidden md:flex gap-8 font-bold text-gray-600 text-sm uppercase tracking-wider">
           <a href="#about" className="hover:text-red-500 transition-colors">About Me</a>
